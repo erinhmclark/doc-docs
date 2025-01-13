@@ -1,6 +1,6 @@
 [project]
 name = "doc-docs"
-version = "0.1.1"
+version = "0.1.2"
 description = "Documentation documentation."
 authors = [
     {name = "erinhmclark",email = "erinhannahmary.clark@gmail.com"}

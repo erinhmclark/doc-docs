@@ -13,22 +13,17 @@ on:
     types: [published]
   workflow_dispatch:
 
+
 permissions:
   contents: read
 
 jobs:
   deploy:
-    name: Publish Python Package to TestPyPI
+    name: Publish python package
     runs-on: ubuntu-latest
-    environment:
-      name: testpypi-publish
-      url: https://test.pypi.org/project/doc-docs/
-    permissions:
-      id-token: write
 
     steps:
-    # Step 1: Checkout the codebase
-    - name: Checkout repository
+    - name: Checkout Repository
       uses: actions/checkout@v4
 
     - name: Extract Python Version from pyproject.toml
@@ -42,18 +37,15 @@ jobs:
       with:
         python-version: ${{ env.python-version }}
 
-    # Step 3: Install Poetry
     - name: Install Poetry
       run: |
         pipx install "poetry>=2.0.0,<3.0.0"
 
-    # Step 4: Install dependencies using Poetry
     - name: Install dependencies
       run: |
         poetry install --no-interaction --no-root
 
-    # Step 5: Build the package
-    - name: Build package
+    - name: Build the package
       run: |
         poetry build
 

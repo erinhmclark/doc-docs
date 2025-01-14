@@ -52,7 +52,11 @@ jobs:
         poetry build
 
     # Step 6: Publish to TestPyPI
-    - name: Publish to TestPyPI
-      run: |
-        poetry config repositories.test-pypi https://test.pypi.org/legacy/
-        poetry publish --repository test-pypi --username __token__ --password ${{ secrets.TESTPYPI_API_TOKEN }}
+    - name: Publish package distributions to PyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
+
+#    # Step 6: Publish to TestPyPI
+#    - name: Publish to TestPyPI
+#      run: |
+#        poetry config repositories.test-pypi https://test.pypi.org/legacy/
+#        poetry publish --repository test-pypi --username __token__ --password ${{ secrets.TESTPYPI_API_TOKEN }}

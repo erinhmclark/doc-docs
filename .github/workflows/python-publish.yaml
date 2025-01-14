@@ -9,8 +9,10 @@
 name: Pypi
 
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - "*-release"
+      - "*-beta"
   workflow_dispatch:
 
 
@@ -35,7 +37,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: "3.10"
+        python-version-file: pyproject.toml
 
     - name: Install Poetry
       run: |

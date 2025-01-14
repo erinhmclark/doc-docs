@@ -62,7 +62,7 @@ jobs:
     needs: [ build ]
     runs-on: ubuntu-latest
     environment:
-      name: release
+      name: testpypi-publish
     permissions:
       # In order to use Trusted Publisher
       id-token: write

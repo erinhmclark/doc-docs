@@ -61,7 +61,9 @@ jobs:
     name: Upload release to PyPI
     needs: [ build ]
     runs-on: ubuntu-latest
-
+    environment:
+      name: testpypi-publish
+      url: https://test.pypi.org/manage/project/doc-docs/
     permissions:
       # In order to use Trusted Publisher
       id-token: write

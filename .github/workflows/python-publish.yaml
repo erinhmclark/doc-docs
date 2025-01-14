@@ -25,6 +25,7 @@ jobs:
       url: https://test.pypi.org/project/doc-docs/
     permissions:
       id-token: write
+      contents: read
 
     steps:
     # Step 1: Checkout the codebase

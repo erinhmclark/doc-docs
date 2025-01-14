@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: testpypi-publish
-      url: https://testpypi.org/project/doc-docs/
+      url: https://test.pypi.org/project/doc-docs/
     permissions:
       id-token: write
 

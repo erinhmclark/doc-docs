@@ -15,14 +15,13 @@ on:
       - "*-beta"
   workflow_dispatch:
 
-
-permissions:
-  contents: read
-
 jobs:
   deploy:
     name: Publish python package
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
     - name: Checkout Repository

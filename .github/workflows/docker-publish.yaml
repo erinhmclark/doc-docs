@@ -6,8 +6,10 @@ name: Docker
 # documentation.
 
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - "*-release"
+      - "*-beta"
   workflow_dispatch:
 
 env:
@@ -36,7 +38,6 @@ jobs:
         uses: docker/setup-buildx-action@v1
       
       - name: Log in to Docker Hub
-        # was on v1, now v3
         uses: docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
@@ -44,7 +45,6 @@ jobs:
       
       - name: Extract metadata (tags, labels) for Docker
         id: meta
-        # was on v3, now on v5
         uses: docker/metadata-action@369eb591f429131d6889c46b94e711f089e6ca96
         with:
           images: erinhmclark/doc-docs

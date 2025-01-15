@@ -20,4 +20,4 @@ build:
 
 
 sphinx:
-  configuration: docs/conf/conf.py
+  configuration: docs/conf.py

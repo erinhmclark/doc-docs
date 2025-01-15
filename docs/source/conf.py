@@ -11,10 +11,7 @@ package_metadata = metadata("doc-docs")
 project = package_metadata["name"]
 authors = package_metadata["authors"]
 release = package_metadata["version"]
-project = 'doc-docs'
-copyright = '2025, ec'
-author = 'ec'
-release = '0.0.1'
+
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

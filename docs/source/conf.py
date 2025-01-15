@@ -5,7 +5,12 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+from importlib.metadata import metadata
 
+package_metadata = metadata("doc-docs")
+project = package_metadata["name"]
+authors = package_metadata["authors"]
+release = package_metadata["version"]
 project = 'doc-docs'
 copyright = '2025, ec'
 author = 'ec'

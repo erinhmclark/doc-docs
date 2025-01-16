@@ -11,8 +11,6 @@ release = package_metadata["version"]
 
 
 # -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
-
 extensions = [
     "autoapi.extension",            # Generate API documentation from docstrings
     "myst_parser",                  # Markdown support
@@ -32,7 +30,7 @@ autoapi_type = 'python'
 autoapi_dirs = ["../../src"]
 autodoc_typehints = "signature"     # Include type hints in the signature
 autoapi_ignore = []                 # Ignore specific modules
-autoapi_keep_files = False          # Option to retain intermediate JSON files for debugging
+autoapi_keep_files = True          # Option to retain intermediate JSON files for debugging
 autoapi_add_toctree_entry = True    # Include API docs in the TOC
 autoapi_template_dir = None         # Use default templates
 autoapi_options = [
@@ -61,8 +59,6 @@ source_suffix = {
 }
 
 # -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
-
 html_theme = 'furo'
 # html_static_path = ['_static']
 
